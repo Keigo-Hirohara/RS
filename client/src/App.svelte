@@ -3,4 +3,6 @@
   import { routes } from '../.routify/routes';
 </script>
 
-<Router {routes} />
+<main>
+  <Router {routes} />
+</main>

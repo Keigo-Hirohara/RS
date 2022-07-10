@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "client",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "dev:rollup": "rollup -c -w",
     "dev:routify": "routify",
     "build": "routify -b && rollup -c",
-    "start": "sirv public --no-clear",
+    "start": "sirv public --single",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
