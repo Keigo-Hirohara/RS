@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Client } from '@line/bot-sdk';
 import { ConfigService as NestConfigService } from '@nestjs/config';
+import { richmenuObject } from './services/richmenu';
 
 @Injectable()
 export class ConfigService {
@@ -10,6 +11,8 @@ export class ConfigService {
       channelAccessToken: configService.get<string>('CHANNEL_ACCESS_TOKEN'),
       channelSecret: configService.get<string>('CHANNEL_SECRET'),
     };
-    return new Client(tokens);
+    const client = new Client(tokens);
+    client.createRichMenu(richmenuObject());
+    return client;
   }
 }
